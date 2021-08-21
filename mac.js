@@ -1,3 +1,5 @@
+// Extra memory calculation
+
 const extraEightgbmemoryCosting = document.getElementById('eight-gb-memory');
 const extraSixteengbmemoryCosting = document.getElementById('sixteen-gb-memory');
 const memoryCostingField = document.getElementById('extra-memory-cost');
@@ -10,6 +12,9 @@ extraSixteengbmemoryCosting.addEventListener('click', function(){
     memoryCostingField.innerText = '180';
     updateTotalPricing();
 });
+
+// SSD storage costing calculation
+
 const baseSsdCosting = document.getElementById('base-ssd-storage');
 const halfOfOneTeraCosting = document.getElementById('halfofonetera-ssd-storage');
 const oneTeraCosting = document.getElementById('onetera-ssd-storage');
@@ -27,6 +32,8 @@ oneTeraCosting.addEventListener('click', function(){
     extarSsdCosting.innerText = '180';
     updateTotalPricing();
 })
+// Delivery cost calculation
+
 const freeDelivey = document.getElementById('free-delivery');
 const chargedDelivery = document.getElementById('extra-delivery-added');
 const shippingFeild = document.getElementById('extra-deliverycost-added');
@@ -43,6 +50,7 @@ chargedDelivery.addEventListener('click', function(){
 const totalPricing = document.getElementById('total-pricing');
 const newGrandTotal = document.getElementById('grand-total');
 
+// Total and GrandTotal Calculation
 function updateTotalPricing(){
 
     const extraMemoryCharge = parseInt (memoryCostingField.innerText);
@@ -53,12 +61,14 @@ function updateTotalPricing(){
     totalPricing.innerText = grandTotal; 
     const newGrandTotals = grandTotal;
     newGrandTotal.innerText = newGrandTotals;
+    
 };
+// promocode checking and reducing price
 function verifyPromoCode(){
+
     const typedpromocode = document.getElementById('enter-promo-code').value;
 
     if(typedpromocode == 'stevekaku'){
         newGrandTotal.innerText = parseInt(totalPricing.innerText) - (( parseInt(totalPricing.innerText))*(20 / 100));
-        typedpromocode.inner = '';
     }
 }
