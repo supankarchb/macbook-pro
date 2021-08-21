@@ -70,5 +70,9 @@ function verifyPromoCode(){
 
     if(typedpromocode == 'stevekaku'){
         newGrandTotal.innerText = parseInt(totalPricing.innerText) - (( parseInt(totalPricing.innerText))*(20 / 100));
+        document.getElementById('enter-promo-code').value = '';
+    }
+    else {
+        document.getElementById('enter-promo-code').value = '';
     }
 }
